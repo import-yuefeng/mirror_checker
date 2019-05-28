@@ -1,5 +1,8 @@
 package core
 
+var imageName string = "Debian"
+
 type Debian struct {
-	basic *Basic
+	basic     *Basic
+	imageName string
 }

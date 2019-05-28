@@ -7,11 +7,19 @@ type Images struct {
 type ImageInfo struct {
 	ImageName      string `yaml:"ImageName"`
 	Crontab        string `yaml:"Crontab"`
-	CostomPath     string `yaml:"CostomPath"`
-	CostomFileName string `yaml:"CostmonFileName"`
+	RemotePath     string `yaml:"RemotePath"`
+	LocalPath      string `yaml:"LocalPath"`
+	CostomFileName string `yaml:"CostomFileName"`
 }
 
 type Basic struct {
-	Path     string
-	FileName string
+	RemotePath    string
+	IndexFileName string
+	LocalPath     string
+	ImageName     string
+}
+
+type Custom struct {
+	Basics    *Basic
+	ImageName string
 }
