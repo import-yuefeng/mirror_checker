@@ -3,6 +3,7 @@ package core
 import (
 	"bufio"
 	"crypto/md5"
+	"errors"
 	"fmt"
 	"io"
 	"log"
@@ -23,24 +24,26 @@ func createFile(filename, fileContext string) {
 	Writer.Flush()
 }
 
-func (basic *Basic) Checker() bool {
-	if basic.RemotePath != "" && basic.IndexFileName != "" {
+func (basic *Basic) Checker() (bool, error) {
+	if basic.RemotePath != "" && basic.IndexFileName != "" && basic.LocalPath != "" {
 		remoteURL, localURL := basic.RemotePath+basic.IndexFileName, basic.LocalPath+basic.IndexFileName
 		remoteRelease, localRelease := xpath.Request(remoteURL), xpath.Request(localURL)
 		remoteFileName, localFileName := "remote_"+basic.ImageName, "local_"+basic.ImageName
 		createFile(remoteFileName, remoteRelease)
 		createFile(localFileName, localRelease)
 		if sumFileMd5(remoteFileName) == sumFileMd5(localFileName) {
-			return true
+			return true, nil
 		}
+	} else {
+		err := errors.New("RemotePath/ is nil")
+		return false, err
 	}
-	return false
+	return false, nil
 }
 
 func sumFileMd5(fileName string) string {
 	filePoint, err := os.Open(fileName)
 	if err != nil {
-		log.Println("os.Open(fileName)")
 		log.Fatal(err)
 	}
 	defer filePoint.Close()

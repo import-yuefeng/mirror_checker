@@ -1,15 +1,72 @@
 Images:
   "debian":
     ImageName: "debian"
-    Crontab: "1 * * * * * *"
-    RemotePath: "https://mirrors.xtom.com/debian/dists/Debian9.9/"
-    LocalPath: "https://mirrors.xtom.com/debian/dists/Debian9.9/"
-    CostomFileName: "Release"
+    Crontab: "1 * * * * *"
+    RemotePath: "https://mirrors.tuna.tsinghua.edu.cn/debian/dists/"
+    LocalPath: "https://mirrors.xtom.com/debian/dists/"
+    CostomFileName: "extrafiles"
 
   "ubuntu":
     ImageName: "ubuntu"  
-    Crontab: "2 * * * * * *"
+    Crontab: "2 * * * * *"
+    RemotePath: "https://mirrors.tuna.tsinghua.edu.cn/ubuntu/dists/bionic-proposed/"
+    LocalPath: "https://mirrors.xtom.com/ubuntu/dists/bionic-proposed/"
+    CostomFileName: "Release"
 
-  "pypi":
-    ImageName: "pypi"
-    Crontab: "4 * * * * * *"
+  "centos":
+    ImageName: "centos"
+    Crontab: "4 * * * * *"
+    RemotePath: "https://mirrors.tuna.tsinghua.edu.cn/centos/"
+    LocalPath: "https://mirrors.xtom.com/centos/"
+    CostomFileName: "timestamp.txt"
+
+  "alpine":
+    ImageName: "alpine"
+    Crontab: "4 * * * * *"
+    RemotePath: "https://mirrors.tuna.tsinghua.edu.cn/alpine/"
+    LocalPath: "https://mirrors.xtom.com/alpine/"
+    CostomFileName: "last-updated"
+  
+  "anthon":
+    ImageName: "anthon"
+    Crontab: "4 * * * * *"
+    RemotePath: "https://mirrors.tuna.tsinghua.edu.cn/anthon/"
+    LocalPath: "https://mirrors.xtom.com/anthon/"
+    CostomFileName: "last_update"
+
+  "archlinux":
+    ImageName: "archlinux"
+    Crontab: "4 * * * * *"
+    RemotePath: "https://mirrors.tuna.tsinghua.edu.cn/archlinux/"
+    LocalPath: "https://mirrors.xtom.com/archlinux/"
+    CostomFileName: "lastupdate"
+
+  "archlinuxcn":
+    ImageName: "archlinuxcn"
+    Crontab: "4 * * * * *"
+    RemotePath: "https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/"
+    LocalPath: "https://mirrors.xtom.com/archlinuxcn/"
+    CostomFileName: "lastupdate"
+  
+  "centos-altarch":
+    ImageName: "centos-altarch"
+    Crontab: "4 * * * * *"
+    RemotePath: "https://mirrors.tuna.tsinghua.edu.cn/centos-altarch/"
+    LocalPath: "https://mirrors.xtom.com/centos-altarch/"
+    CostomFileName: "timestamp.txt"
+
+  "manjaro":
+    ImageName: "manjaro"
+    Crontab: "4 * * * * *"
+    RemotePath: "https://mirrors.tuna.tsinghua.edu.cn/manjaro/"
+    LocalPath: "https://mirrors.xtom.com/manjaro/"
+    CostomFileName: "state"
+
+  "mx-isos":
+    ImageName: "mx-isos"
+    Crontab: "4 * * * * *"
+    RemotePath: "https://mirrors.tuna.tsinghua.edu.cn/mx-isos/"
+    LocalPath: "https://mirrors.xtom.com/mx-isos/"
+    CostomFileName: "TIME.txt"
+
+
